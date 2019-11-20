@@ -1,7 +1,7 @@
 # Base64 encoder/decoder with reactJS 
 
 * Development progress:
- - Encode-Decode message with 35 different cryptograpy algorithm will be available
+ - 35 different cryptography algorithm will be available
 
 ## Available Scripts
 
