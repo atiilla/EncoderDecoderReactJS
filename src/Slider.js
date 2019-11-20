@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Carousel, Container } from 'react-bootstrap/'
+import { Carousel } from 'react-bootstrap/'
 import faker from 'faker'
 class Slider extends Component {
     constructor(props) {
@@ -10,44 +10,37 @@ class Slider extends Component {
     }
 
 
+
+    componentDidMount(){
+        for(let i =0; i <3; i++){
+            const sliders = [faker.image.image()]
+
+            this.setState(prevState=>({
+                slider:[...prevState.slider,sliders]
+            }))
+        }
+    }
+
     render() {
         return (
             <div>
 
                 <Carousel>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={faker.image.image()}
-                            alt="First slide" height="200px" style={{ objectFit: 'cover' }}
-                        />
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={faker.image.image()}
-                            alt="First slide" height="200px" style={{ objectFit: 'cover' }}
-                        />
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={faker.image.image()}
-                            alt="First slide" height="200px" style={{ objectFit: 'cover' }}
-                        />
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
+                    {
+                        this.state.slider.map((image, index) => (
+                            <Carousel.Item key={index}>
+                                <img
+                                    className="d-block w-100"
+                                    src={image}
+                                    alt="First slide" height="200px" style={{ objectFit: 'cover' }}
+                                />
+                                <Carousel.Caption>
+                                    <h3>Slider1</h3>
+                                    <p>Description</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                        ))
+                    }
                 </Carousel>
                 <hr></hr>
 

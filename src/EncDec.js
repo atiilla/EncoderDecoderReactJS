@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Form, Button } from 'react-bootstrap/'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Base64 } from 'js-base64';
 
@@ -125,7 +124,7 @@ class EncDec extends Component {
 }
 
 export default EncDec;
-
+/*
 function stringifyFormData(fd) {
     const data = {};
     for (let key of fd.keys()) {
@@ -135,7 +134,7 @@ function stringifyFormData(fd) {
 }
 
 
-
+*/
 /*
       <Form ref="form" onSubmit={this.handleSubmit}>
 
